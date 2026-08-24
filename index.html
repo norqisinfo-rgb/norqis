@@ -169,11 +169,7 @@ a{color:inherit}
 .static-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2rem,7vw,3rem);margin:0 0 .3em;text-shadow:var(--tshadow)}
 .static-hero p{color:var(--text-secondary);font-size:1.05rem;margin:0 0 1.3em;text-shadow:var(--tshadow)}
 
-@media (max-width:720px),
-       (orientation:portrait) and (max-width:1024px),
-       (orientation:portrait) and (pointer:coarse),
-       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
-       (prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion:reduce){
   .static-hero{display:flex}
   .scrub-only{display:none !important}
 }
@@ -668,7 +664,7 @@ footer{border-top:1px solid var(--line);padding:3em clamp(1.4em,7vw,4em);positio
 
   /* ---------- blob loader ---------- */
   const VIDEO_URL = 'assets/hero-scrub.mp4';
-  const VIDEO_BYTES = 6000000;
+  const VIDEO_BYTES = 5147041;
   let started = false;
   function startBlobFetch(){
     if (started) return; started = true;
@@ -709,10 +705,6 @@ footer{border-top:1px solid var(--line);padding:3em clamp(1.4em,7vw,4em);positio
 
   /* ---------- static-hero gates (live, both directions) ---------- */
   const GATES = [
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
-    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
     '(prefers-reduced-motion: reduce)'
   ];
   let scrubOn = false;
